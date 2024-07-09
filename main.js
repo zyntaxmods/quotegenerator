@@ -40,7 +40,7 @@ let button = document.getElementById("submit").onclick = function(){
             let fuck = document.createElement('a');
             fuck.download = "zyrill.mp3";
             fuck.href = data.link;
-            dlBtn.click();
+            fuck.click();
         });
     })
 }
