@@ -29,11 +29,28 @@ body{
 .navBar ul li{
     margin-left: 12px;
     list-style-type: none;
+    position: relative;
+    display: inline-block;
+
 }
 .navBar ul li a{
     text-decoration: none;
     color: rgb(146, 145, 145);
     font-weight: 600;
+    cursor: url(cursor.cur),auto;
+}
+.navBar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+.navBar ul li:hover::after{
+    width: 100%;
 }
 .logo{
     display: flex;
@@ -44,13 +61,14 @@ body{
 .cont{
     display:flex;
     width: 30%;
+    height: 169px;
     flex-direction: column;
     margin: auto;
     align-items: center;
     background-color: white;
-    padding: 35px 20px;
+    padding: 30px 15px;
     position: relative;
-    top: 45px;
+    top: 80px;
     border: 1px solid gray;
     border-radius: 4%;
     box-shadow: 0px 0px 10px black;
@@ -70,6 +88,7 @@ body{
     right: 60px;
     box-shadow: 0px 0px 10px gray;
     border: 1px solid gray;
+    cursor: url(cursor.cur),auto;
 }
 .cont:focus{
     outline: none;
@@ -81,9 +100,39 @@ body{
 .cont input,
 button{
     margin-top: 15px;
+    border-radius: 7%;
 }
 .cont button{
     display:flex;
     position: absolute;
+    top: -50px;
     right: 5%;
+    border: 1px solid gray;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background: black;
+    position: relative;
+    cursor: url(cursor.cur),auto;
+    overflow: hidden;
+    z-index: 1;
+    left: 37%;
+    box-shadow: 0px 2px 10px black;
+}
+span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 1%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    box-shadow: 0px 2px 10px green;
 }
